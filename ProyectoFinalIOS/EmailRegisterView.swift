@@ -1,6 +1,6 @@
 //
 //  EmailRegisterView.swift
-//  ProyectoFinalIOS
+//  Login
 //
 //  Created by user217673 on 6/16/22.
 //
@@ -31,7 +31,7 @@ struct EmailRegisterView: View {
             .font(.largeTitle)
             .tint(.primary)
             Group {
-                Text("Regístrate para poder agendar citas a domicilio con los mejores doctores")
+                Text("Regístrate para guardar todos tus enlaces en una sola app.")
                     .tint(.secondary)
                     .multilineTextAlignment(.center)
                     .padding(.top, 2)

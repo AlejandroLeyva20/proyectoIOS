@@ -1,6 +1,6 @@
 //
-//  Loginview.swift
-//  ProyectoFinalIOS
+//  LoginView.swift
+//  Login
 //
 //  Created by user217673 on 6/16/22.
 //
@@ -62,4 +62,3 @@ struct LoginView_Previews: PreviewProvider {
         LoginView(authenticationViewModel: AuthenticationViewModel())
     }
 }
-
