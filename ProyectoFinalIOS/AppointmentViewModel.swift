@@ -12,6 +12,7 @@ import FirebaseFirestoreSwift
 class AppointmentViewModel: ObservableObject {
     
     @Published var appointments = [Appointment]()
+    @Published var appointmentsEmail = [Appointment]()
     
     private var db = Firestore.firestore()
     
@@ -26,8 +27,30 @@ class AppointmentViewModel: ObservableObject {
                 let data = queryDocumentSnapshot.data()
                 let doctor = data["doctor"] as? String ?? ""
                 let patient = data["user"] as? String ?? ""
-                let date = data["date"] as? Date ?? Date()
+                let date = data["date"] as? String ?? ""
                 return Appointment(doctor: doctor, date: date, patient: patient)
+            }
+        }
+    }
+    
+    func fetchDataSpecific(email: String){
+        db.collection("appointments").addSnapshotListener { (querySnapshot, error) in
+            guard let documents = querySnapshot?.documents else {
+                print("No documents obtained")
+                return
+            }
+            
+            self.appointmentsEmail = documents.map { (queryDocumentSnapshot) -> Appointment in
+                let data = queryDocumentSnapshot.data()
+                let patient = data["user"] as? String ?? ""
+                print(patient)
+                print(email)
+                if patient.compare(email, options: .caseInsensitive) == .orderedSame{
+                    let doctor = data["doctor"] as? String ?? ""
+                    let date = data["date"] as? String ?? ""
+                    return Appointment(doctor: doctor, date: date, patient: patient)
+                }
+                return Appointment(doctor: "", date: "", patient: "")
             }
         }
     }
@@ -35,8 +58,8 @@ class AppointmentViewModel: ObservableObject {
     func setDocument(doctor: String, date: String, user: String) {
             // [START set_document]
             // Add a new document in collection "cities"
-            db.collection("appointments").document("test").setData([
-                "date": "",
+            db.collection("appointments").document(UUID().uuidString).setData([
+                "date": date,
                 "doctor": doctor,
                 "user": user
             ]) { err in
