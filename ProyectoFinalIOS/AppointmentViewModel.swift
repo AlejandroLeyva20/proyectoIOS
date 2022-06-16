@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class AppointmentViewModel: ObservableObject {
     
@@ -30,6 +31,23 @@ class AppointmentViewModel: ObservableObject {
             }
         }
     }
+    
+    private func setDocument() {
+            // [START set_document]
+            // Add a new document in collection "cities"
+            db.collection("appointments").document("test").setData([
+                "date": "User",
+                "doctor": "Doctor",
+                "user": "yo"
+            ]) { err in
+                if let err = err {
+                    print("Error writing document: \(err)")
+                } else {
+                    print("Document successfully written!")
+                }
+            }
+            // [END set_document]
+        }
 }
 
 

@@ -57,7 +57,12 @@ struct DoctorDetail: View {
             }.padding(.top,10)
                 .padding(.leading)
             Spacer()
-            AppointmentButton()
+            NavigationLink(
+                destination: MakeAppointmentCalendarView(doctor: doctor),
+                label: {
+                    AppointmentButton()
+                }
+            ).navigationBarTitle("Doctor Information")
         }
    }
 }
@@ -68,14 +73,11 @@ struct DoctorDetail_Previews: PreviewProvider {
 }
 
 struct AppointmentButton: View{
-    
     var body: some View{
-        Button(action: {}){
-            HStack{
-                Image(systemName: "calendar")
-                Text("Hacer Cita")
-                    .bold()
-            }
+        HStack{
+            Image(systemName: "calendar")
+            Text("Hacer Cita")
+                .bold()
         }
         .frame(width: 300, height: 50)
         .foregroundColor(.white)
