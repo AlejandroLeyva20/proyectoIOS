@@ -9,6 +9,8 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    //@ObservedObject var authenticationViewModel: AuthenticationViewModel
+    
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
@@ -18,6 +20,19 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
+            /*VStack {
+                Text("Bienvenido \(authenticationViewModel.user?.email ?? "No user")")
+                    .padding(.top, 32)
+                Spacer()
+                
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("Home")
+            .toolbar {
+                Button("Logout") {
+                    authenticationViewModel.logout()
+                }
+            }*/
             List {
                 ForEach(items) { item in
                     NavigationLink {
@@ -83,6 +98,6 @@ private let itemFormatter: DateFormatter = {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView(/*authenticationViewModel: AuthenticationViewModel()*/).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
