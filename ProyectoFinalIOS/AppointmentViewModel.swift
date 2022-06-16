@@ -32,13 +32,13 @@ class AppointmentViewModel: ObservableObject {
         }
     }
     
-    private func setDocument() {
+    func setDocument(doctor: String, date: String, user: String) {
             // [START set_document]
             // Add a new document in collection "cities"
             db.collection("appointments").document("test").setData([
-                "date": "User",
-                "doctor": "Doctor",
-                "user": "yo"
+                "date": "",
+                "doctor": doctor,
+                "user": user
             ]) { err in
                 if let err = err {
                     print("Error writing document: \(err)")

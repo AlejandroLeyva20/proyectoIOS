@@ -10,8 +10,9 @@ import SwiftUI
 
 struct DoctorRow: View {
     @ObservedObject var doctorViewModel: DoctorViewModel
+    @ObservedObject var authenticationViewModel: AuthenticationViewModel
 
-    var speciality:String = "Specialidad"
+    var speciality:String = "Especialidad"
     
     var body: some View {
         VStack(alignment: .leading){
@@ -22,7 +23,7 @@ struct DoctorRow: View {
             ScrollView(.vertical){
                     ForEach(doctorViewModel.doctors){doctor in
                         NavigationLink(
-                            destination: DoctorDetail(doctor: doctor),
+                            destination: DoctorDetail(doctor: doctor, authenticationViewModel: AuthenticationViewModel()),
                             label: {
                                 DoctorItem(doctor: doctor)
                             }
@@ -39,7 +40,7 @@ struct DoctorRow: View {
     
 struct DoctorRow_Previews: PreviewProvider {
     static var previews: some View {
-        DoctorRow(doctorViewModel: DoctorViewModel())
+        DoctorRow(doctorViewModel: DoctorViewModel(), authenticationViewModel: AuthenticationViewModel())
     }
 
 }

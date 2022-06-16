@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DoctorDetail: View {
     var doctor: Doctor
+    @ObservedObject var authenticationViewModel: AuthenticationViewModel
     
     var body: some View {
         VStack{
@@ -58,7 +59,7 @@ struct DoctorDetail: View {
                 .padding(.leading)
             Spacer()
             NavigationLink(
-                destination: MakeAppointmentCalendarView(doctor: doctor),
+                destination: MakeAppointmentCalendarView(doctor: doctor, authenticationViewModel: AuthenticationViewModel()),
                 label: {
                     AppointmentButton()
                 }
@@ -68,7 +69,7 @@ struct DoctorDetail: View {
 }
 struct DoctorDetail_Previews: PreviewProvider {
     static var previews: some View {
-        DoctorDetail(doctor: Doctor(id: "1", name: "Dr Jose Garcia",speciality: "Medico General",treated: 10, information: "Specialized in kasksakosaklas", imageURL:""))
+        DoctorDetail(doctor: Doctor(id: "1", name: "Dr Jose Garcia",speciality: "Medico General",treated: 10, information: "Specialized in kasksakosaklas", imageURL:""), authenticationViewModel: AuthenticationViewModel())
     }
 }
 
