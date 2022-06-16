@@ -11,31 +11,42 @@ struct ContentView: View {
     @ObservedObject var authenticationViewModel: AuthenticationViewModel
     @ObservedObject var doctorViewModel: DoctorViewModel
     
+    @StateObject var appointmentViewModel = AppointmentViewModel()
+    
     var body: some View {
-        NavigationView {
-            VStack {
-                Text("Bienvenido \(authenticationViewModel.user?.email ?? "No user")")
-                    .padding(.top, 32)
-                Spacer()
-                
-                List(doctorViewModel.doctors) { doctor in
-                                                VStack(alignment: .leading) {
-                                                    Text(doctor.name).font(.title)
-                                                    Text(doctor.speciality).font(.subheadline)
+        TabView{
+            NavigationView {
+                VStack {
+                    Text("Bienvenido \(authenticationViewModel.user?.email ?? "No user")")
+                        .padding(.top, 32)
+                    Spacer()
+                    
+                    List(doctorViewModel.doctors) { doctor in
+                                                    VStack(alignment: .leading) {
+                                                        Text(doctor.name).font(.title)
+                                                        Text(doctor.speciality).font(.caption)
+                                                    }
+                                                }.navigationBarTitle("Find a Doctor")
+                                                .onAppear() {
+                                                    self.doctorViewModel.fetchData()
                                                 }
-                                            }.navigationBarTitle("Find a Doctor")
-                                            .onAppear() {
-                                                self.doctorViewModel.fetchData()
-                                            }
-                
-            }
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle("Home")
-            .toolbar {
-                Button("Logout") {
-                    authenticationViewModel.logout()
+                    
+                }
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationTitle("Home")
+                .toolbar {
+                    Button("Logout") {
+                        authenticationViewModel.logout()
+                    }
                 }
             }
+            .tabItem{
+                Image(systemName: "house")
+            }
+            CalendarView(appointmentViewModel: AppointmentViewModel(), authenticationViewModel: AuthenticationViewModel())
+                .tabItem{
+                    Image(systemName: "calendar")
+                }
         }
     }
 }
