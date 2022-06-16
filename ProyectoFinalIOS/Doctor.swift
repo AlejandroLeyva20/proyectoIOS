@@ -12,4 +12,6 @@ struct Doctor: Identifiable {
     var name: String
     var speciality: String
     var treated: Int
+    var information: String
+    var imageURL: String
 }

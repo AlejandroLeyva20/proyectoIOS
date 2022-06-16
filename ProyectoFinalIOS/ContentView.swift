@@ -21,15 +21,43 @@ struct ContentView: View {
                         .padding(.top, 32)
                     Spacer()
                     
-                    List(doctorViewModel.doctors) { doctor in
+                    DoctorRow(doctorViewModel: doctorViewModel)
+                        .padding(.bottom, 10)
+                        /*Text("Especialidad")
+                                    .foregroundColor(.black)
+                                    .font(.title)
+                                    .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)*/
+                        /*ScrollView(.vertical){
+                                ForEach(doctorViewModel.doctors){doctor in
+                                    NavigationLink(
+                                        destination: DoctorDetail(doctor: doctor),
+                                        label: {
+                                            DoctorItem(doctor: doctor)
+                                        }
+                                    )
+                                    
+                                }.navigationBarTitle("Find a Doctor")
+                                    .onAppear() {
+                                        self.doctorViewModel.fetchData()
+                                    }
+                            
+                        
+                        .background(Color.gray.opacity(0.2))
+                    }*/
+                    
+                    /*List(doctorViewModel.doctors) { doctor in
                                                     VStack(alignment: .leading) {
-                                                        Text(doctor.name).font(.title)
-                                                        Text(doctor.speciality).font(.caption)
+                                                         NavigationLink(
+                                                             destination: DoctorDetail(doctor: doctor),
+                                                             label: {
+                                                                 DoctorItem(doctor: doctor)
+                                                             }
+                                                         )
                                                     }
                                                 }.navigationBarTitle("Find a Doctor")
                                                 .onAppear() {
                                                     self.doctorViewModel.fetchData()
-                                                }
+                                                }*/
                     
                 }
                 .navigationBarTitleDisplayMode(.inline)

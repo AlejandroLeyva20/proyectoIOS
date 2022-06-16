@@ -26,7 +26,9 @@ class DoctorViewModel: ObservableObject {
                 let name = data["name"] as? String ?? ""
                 let speciality = data["speciality"] as? String ?? ""
                 let treated = data["treated"] as? Int ?? 0
-                return Doctor(name: name, speciality: speciality,treated:treated)
+                let information = data["information"] as? String ?? ""
+                let imageURL = data["image"] as? String ?? ""
+                return Doctor(name: name, speciality: speciality,treated:treated, information: information, imageURL: imageURL)
             }
         }
     }
