@@ -20,16 +20,15 @@ struct LoginEmailView: View {
             DiscardView()
                 .padding(.top, 8)
             Group {
-                Text("Welcome to this New App")
+                Text("DoctorToMe")
                     .bold()
-                    .underline()
             }
             .padding(.horizontal, 8)
             .multilineTextAlignment(.center)
-            .font(.largeTitle)
+            .font(.title)
             .tint(.primary)
             Group {
-                Text("Loguéate de nuevo para poder acceder a todos tus links.")
+                Text("\nLoguéate para poder agendar una cita")
                     .tint(.secondary)
                     .multilineTextAlignment(.center)
                     .padding(.top, 2)

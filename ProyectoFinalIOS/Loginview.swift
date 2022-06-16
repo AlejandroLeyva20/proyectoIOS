@@ -22,13 +22,13 @@ struct LoginView: View {
     
     var body: some View {
         VStack {
-            Circle()
-                .frame(width: 200, height: 200)
+            Image("logo_size")
+                .frame(width: 250, height: 250)
             VStack {
                 Button("Entra con Email") {
                     authenticationSheetView = .login
                 }
-                .tint(.black)
+                .tint(.blue)
             }
             .controlSize(.large)
             .buttonStyle(.bordered)

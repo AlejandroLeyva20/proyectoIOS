@@ -31,7 +31,7 @@ struct EmailRegisterView: View {
             .font(.largeTitle)
             .tint(.primary)
             Group {
-                Text("Regístrate para guardar todos tus enlaces en una sola app.")
+                Text("Regístrate para agendar una cita medica a domicilio")
                     .tint(.secondary)
                     .multilineTextAlignment(.center)
                     .padding(.top, 2)
