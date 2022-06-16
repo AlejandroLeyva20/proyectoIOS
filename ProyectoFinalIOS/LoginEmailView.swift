@@ -1,9 +1,12 @@
 //
 //  LoginEmailView.swift
-//  ProyectoFinalIOS
+//  Login
 //
 //  Created by user217673 on 6/16/22.
 //
+
+import SwiftUI
+
 
 import SwiftUI
 
@@ -17,7 +20,7 @@ struct LoginEmailView: View {
             DiscardView()
                 .padding(.top, 8)
             Group {
-                Text("Bienvenido a DoctorToME")
+                Text("Welcome to this New App")
                     .bold()
                     .underline()
             }
@@ -26,7 +29,7 @@ struct LoginEmailView: View {
             .font(.largeTitle)
             .tint(.primary)
             Group {
-                Text("Loguéate de nuevo para agendar una cita domicilio")
+                Text("Loguéate de nuevo para poder acceder a todos tus links.")
                     .tint(.secondary)
                     .multilineTextAlignment(.center)
                     .padding(.top, 2)

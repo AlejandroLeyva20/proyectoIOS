@@ -1,6 +1,6 @@
 //
 //  AuthenticationViewModel.swift
-//  ProyectoFinalIOS
+//  Login
 //
 //  Created by user217673 on 6/16/22.
 //
@@ -53,4 +53,3 @@ final class AuthenticationViewModel: ObservableObject {
             }
         }
 }
-

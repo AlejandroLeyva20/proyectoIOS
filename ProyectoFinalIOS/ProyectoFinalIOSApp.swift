@@ -28,18 +28,16 @@ struct ProyectoFinalIOSApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject var authenticationViewModel = AuthenticationViewModel()
     
-    let persistenceController = PersistenceController.shared
-
+    @StateObject var doctorViewModel = DoctorViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView().environment(\.managedObjectContext, persistenceController.container.viewContext)
-            /*if authenticationViewModel.user != nil{
-                ContentView(authenticationViewModel: AuthenticationViewModel())
-                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            if authenticationViewModel.user != nil{
+                ContentView(authenticationViewModel: AuthenticationViewModel(), doctorViewModel: DoctorViewModel())
             }
             else {
                 LoginView(authenticationViewModel: authenticationViewModel)
-            }*/
+            }
             
         }
     }
