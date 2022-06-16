@@ -19,8 +19,8 @@ struct CalendarView: View {
                 Spacer()
                 List(appointmentViewModel.appointments) { appointment in
                                                 VStack(alignment: .leading) {
-                                                    Text(DateFormatter().string(from: appointment.date)).font(.title)
-                                                    Text(appointment.doctor).font(.caption)
+                                                    Text( appointment.doctor).font(.title)
+                                                    Text(appointment.date).font(.caption)
                                                     HStack{
                                                         Spacer()
                                                         Button("Cancel", role: .destructive){

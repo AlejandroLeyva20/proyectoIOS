@@ -15,6 +15,7 @@ struct MakeAppointmentCalendarView: View {
     @State var date = Date()
     var hours = ["9:00 AM - 10:00 AM", "10:00 AM - 11:00 AM", "11:00 AM - 12:00 PM", "12:00 PM - 1:00 PM"]
     @State private var selectedHour = "9:00 AM - 10:00 AM"
+    private let formatter = DateFormatter()
     
     var body: some View {
         NavigationView{
@@ -39,7 +40,8 @@ struct MakeAppointmentCalendarView: View {
                     }
                     Section{
                         Button(action: {
-                            appointmentViewModel.setDocument(doctor: doctor.name, date: selectedHour, user: authenticationViewModel.user?.email ?? "No user" )
+                            formatter.dateFormat = "E, d MMM y"
+                            appointmentViewModel.setDocument(doctor: doctor.name, date: "\(selectedHour) \(formatter.string(from: date))", user: authenticationViewModel.user?.email ?? "No user" )
                         }){
                             Text("Save")
                         }

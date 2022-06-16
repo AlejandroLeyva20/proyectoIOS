@@ -21,7 +21,7 @@ struct ContentView: View {
                         .padding(.top, 32)
                     Spacer()
                     
-                    DoctorRow(doctorViewModel: doctorViewModel, authenticationViewModel: AuthenticationViewModel())
+                    DoctorRow(doctorViewModel: doctorViewModel, authenticationViewModel: authenticationViewModel)
                         .padding(.bottom, 10)
                         /*Text("Especialidad")
                                     .foregroundColor(.black)
@@ -71,7 +71,7 @@ struct ContentView: View {
             .tabItem{
                 Image(systemName: "house")
             }
-            CalendarView(appointmentViewModel: AppointmentViewModel(), authenticationViewModel: AuthenticationViewModel())
+            CalendarView(appointmentViewModel: AppointmentViewModel(), authenticationViewModel: authenticationViewModel)
                 .tabItem{
                     Image(systemName: "calendar")
                 }

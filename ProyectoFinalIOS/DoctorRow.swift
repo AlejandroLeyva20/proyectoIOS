@@ -23,7 +23,7 @@ struct DoctorRow: View {
             ScrollView(.vertical){
                     ForEach(doctorViewModel.doctors){doctor in
                         NavigationLink(
-                            destination: DoctorDetail(doctor: doctor, authenticationViewModel: AuthenticationViewModel()),
+                            destination: DoctorDetail(doctor: doctor, authenticationViewModel: authenticationViewModel),
                             label: {
                                 DoctorItem(doctor: doctor)
                             }

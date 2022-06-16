@@ -59,7 +59,7 @@ struct DoctorDetail: View {
                 .padding(.leading)
             Spacer()
             NavigationLink(
-                destination: MakeAppointmentCalendarView(doctor: doctor, authenticationViewModel: AuthenticationViewModel()),
+                destination: MakeAppointmentCalendarView(doctor: doctor, authenticationViewModel: authenticationViewModel),
                 label: {
                     AppointmentButton()
                 }
