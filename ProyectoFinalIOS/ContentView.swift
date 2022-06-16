@@ -21,7 +21,7 @@ struct ContentView: View {
                         .padding(.top, 32)
                     Spacer()
                     
-                    DoctorRow(doctorViewModel: doctorViewModel)
+                    DoctorRow(doctorViewModel: doctorViewModel, authenticationViewModel: AuthenticationViewModel())
                         .padding(.bottom, 10)
                         /*Text("Especialidad")
                                     .foregroundColor(.black)

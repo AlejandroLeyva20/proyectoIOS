@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MakeAppointmentCalendarView: View {
     var doctor: Doctor
+    @ObservedObject var authenticationViewModel: AuthenticationViewModel
+    @StateObject var appointmentViewModel = AppointmentViewModel()
     
     @State var date = Date()
     var hours = ["9:00 AM - 10:00 AM", "10:00 AM - 11:00 AM", "11:00 AM - 12:00 PM", "12:00 PM - 1:00 PM"]
@@ -36,7 +38,9 @@ struct MakeAppointmentCalendarView: View {
                         }
                     }
                     Section{
-                        Button(action: {}){
+                        Button(action: {
+                            appointmentViewModel.setDocument(doctor: doctor.name, date: selectedHour, user: authenticationViewModel.user?.email ?? "No user" )
+                        }){
                             Text("Save")
                         }
                     }
@@ -46,5 +50,5 @@ struct MakeAppointmentCalendarView: View {
         }.navigationBarTitle(Text("Make an Appointment"))
             .onAppear()
     }
-}
 
+}
