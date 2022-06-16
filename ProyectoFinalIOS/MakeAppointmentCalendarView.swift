@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MakeAppointmentCalendarView: View {
+    var doctor: Doctor
+    
     @State var date = Date()
     var hours = ["9:00 AM - 10:00 AM", "10:00 AM - 11:00 AM", "11:00 AM - 12:00 PM", "12:00 PM - 1:00 PM"]
     @State private var selectedHour = "9:00 AM - 10:00 AM"
@@ -15,6 +17,8 @@ struct MakeAppointmentCalendarView: View {
     var body: some View {
         NavigationView{
             VStack{
+                Text(doctor.name)
+                Text("Calendar")
                 Form{
                     Section {
                         DatePicker(
@@ -36,15 +40,11 @@ struct MakeAppointmentCalendarView: View {
                             Text("Save")
                         }
                     }
-                }
+                }.frame(maxWidth: .infinity,
+                        maxHeight: .infinity)
             }
-        }.navigationBarTitle(Text("Calendar"))
+        }.navigationBarTitle(Text("Make an Appointment"))
             .onAppear()
     }
 }
 
-struct MakeAppointmentCalendarView_Previews: PreviewProvider {
-    static var previews: some View {
-        MakeAppointmentCalendarView()
-    }
-}

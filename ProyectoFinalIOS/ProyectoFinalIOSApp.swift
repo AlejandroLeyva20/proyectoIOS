@@ -32,14 +32,14 @@ struct ProyectoFinalIOSApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(authenticationViewModel: authenticationViewModel, doctorViewModel: doctorViewModel)
-            /*
+            //ContentView(authenticationViewModel: authenticationViewModel, doctorViewModel: doctorViewModel)
+            
             if authenticationViewModel.user != nil{
                 ContentView(authenticationViewModel: authenticationViewModel, doctorViewModel: doctorViewModel)
             }
             else {
                 LoginView(authenticationViewModel: authenticationViewModel)
-            }*/
+            }
             
         }
     }
