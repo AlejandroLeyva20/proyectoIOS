@@ -27,6 +27,9 @@
 		599A1CA8285B2B8600EB7321 /* DiscardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599A1CA7285B2B8600EB7321 /* DiscardView.swift */; };
 		599A1CB0285B3D3B00EB7321 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599A1CAF285B3D3B00EB7321 /* Doctor.swift */; };
 		599A1CB2285B3D9F00EB7321 /* DoctorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599A1CB1285B3D9F00EB7321 /* DoctorViewModel.swift */; };
+		876B60C4285B4DEA002892E2 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876B60C3285B4DEA002892E2 /* CalendarView.swift */; };
+		876B60C6285B4FDF002892E2 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876B60C5285B4FDF002892E2 /* Appointment.swift */; };
+		876B60C8285B5239002892E2 /* AppointmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876B60C7285B5239002892E2 /* AppointmentViewModel.swift */; };
 		87767667285B03BB00FA82AD /* ProyectoFinalIOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87767666285B03BB00FA82AD /* ProyectoFinalIOSApp.swift */; };
 		87767669285B03BB00FA82AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87767668285B03BB00FA82AD /* ContentView.swift */; };
 		8776766B285B03BB00FA82AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8776766A285B03BB00FA82AD /* Assets.xcassets */; };
@@ -46,6 +49,9 @@
 		599A1CA7285B2B8600EB7321 /* DiscardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscardView.swift; sourceTree = "<group>"; };
 		599A1CAF285B3D3B00EB7321 /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
 		599A1CB1285B3D9F00EB7321 /* DoctorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorViewModel.swift; sourceTree = "<group>"; };
+		876B60C3285B4DEA002892E2 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		876B60C5285B4FDF002892E2 /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
+		876B60C7285B5239002892E2 /* AppointmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentViewModel.swift; sourceTree = "<group>"; };
 		87767663285B03BB00FA82AD /* ProyectoFinalIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProyectoFinalIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87767666285B03BB00FA82AD /* ProyectoFinalIOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProyectoFinalIOSApp.swift; sourceTree = "<group>"; };
 		87767668285B03BB00FA82AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,6 +103,7 @@
 			children = (
 				87767666285B03BB00FA82AD /* ProyectoFinalIOSApp.swift */,
 				87767668285B03BB00FA82AD /* ContentView.swift */,
+				876B60C3285B4DEA002892E2 /* CalendarView.swift */,
 				599A1C9B285B2AB300EB7321 /* AuthenticationFirebaseDatasource.swift */,
 				599A1C9D285B2B0900EB7321 /* AuthenticationRepository.swift */,
 				599A1C9F285B2B1C00EB7321 /* AuthenticationViewModel.swift */,
@@ -110,7 +117,9 @@
 				87767671285B03BB00FA82AD /* ProyectoFinalIOS.xcdatamodeld */,
 				8776766C285B03BB00FA82AD /* Preview Content */,
 				599A1CAF285B3D3B00EB7321 /* Doctor.swift */,
+				876B60C5285B4FDF002892E2 /* Appointment.swift */,
 				599A1CB1285B3D9F00EB7321 /* DoctorViewModel.swift */,
+				876B60C7285B5239002892E2 /* AppointmentViewModel.swift */,
 			);
 			path = ProyectoFinalIOS;
 			sourceTree = "<group>";
@@ -209,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				876B60C8285B5239002892E2 /* AppointmentViewModel.swift in Sources */,
 				87767670285B03BB00FA82AD /* Persistence.swift in Sources */,
 				599A1C9C285B2AB300EB7321 /* AuthenticationFirebaseDatasource.swift in Sources */,
 				599A1CB0285B3D3B00EB7321 /* Doctor.swift in Sources */,
@@ -217,6 +227,8 @@
 				599A1CA4285B2B6000EB7321 /* LoginEmailView.swift in Sources */,
 				599A1C9E285B2B0900EB7321 /* AuthenticationRepository.swift in Sources */,
 				87767667285B03BB00FA82AD /* ProyectoFinalIOSApp.swift in Sources */,
+				876B60C4285B4DEA002892E2 /* CalendarView.swift in Sources */,
+				876B60C6285B4FDF002892E2 /* Appointment.swift in Sources */,
 				599A1CA2285B2B4300EB7321 /* Loginview.swift in Sources */,
 				599A1CB2285B3D9F00EB7321 /* DoctorViewModel.swift in Sources */,
 				599A1CA6285B2B7100EB7321 /* EmailRegisterView.swift in Sources */,
