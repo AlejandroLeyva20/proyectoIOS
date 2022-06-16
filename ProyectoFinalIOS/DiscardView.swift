@@ -16,7 +16,7 @@ struct DiscardView: View {
             Button("Cerrar") {
                 discard()
             }
-            .tint(.black)
+            .tint(.red)
             .padding(.trailing, 12)
         }
         .textFieldStyle(.roundedBorder)
