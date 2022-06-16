@@ -17,7 +17,7 @@ struct LoginEmailView: View {
             DiscardView()
                 .padding(.top, 8)
             Group {
-                Text("Welcome to this New App")
+                Text("Bienvenido a DoctorToME")
                     .bold()
                     .underline()
             }
@@ -26,7 +26,7 @@ struct LoginEmailView: View {
             .font(.largeTitle)
             .tint(.primary)
             Group {
-                Text("Loguéate de nuevo para poder acceder a todos tus links.")
+                Text("Loguéate de nuevo para agendar una cita domicilio")
                     .tint(.secondary)
                     .multilineTextAlignment(.center)
                     .padding(.top, 2)
